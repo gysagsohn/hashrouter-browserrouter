@@ -1,12 +1,12 @@
 import React from 'react';
-import { HashRouter, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
 import SecondPage from './components/SecondPage';
 import AnotherPage from './components/AnotherPage';
 
 const App: React.FC = () => {
     return (
-        <HashRouter>
+        <Router>
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
@@ -19,7 +19,7 @@ const App: React.FC = () => {
                 <Route path="/second-page" element={<SecondPage />} />
                 <Route path="/another-page" element={<AnotherPage />} />
             </Routes>
-        </HashRouter>
+        </Router>
     );
 };
 
