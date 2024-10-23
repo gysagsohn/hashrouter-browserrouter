@@ -23,8 +23,6 @@ To better understand and resolve the issue, I first recreated the problem locall
 
 All pages also display "Hello World."
 
-Deployed the app to AWS S3 to simulate the issue in a live environment.
-
 ##### Local Setup:
 
 Ran the app locally using HashRouter to demonstrate the problem.
@@ -34,7 +32,8 @@ Ran the app locally using HashRouter to demonstrate the problem.
 
 #### AWS deployed: 
 
-Ran application after deployment to demonstrate the problem.
+Deployed the app to AWS S3 to simulate the issue in a live environment.
+
 
 ![alt text](resources/screenshot/AWS_hasrouter_homepage.png)
 ![alt text](resources/screenshot/AWS_hasrouter_secondpage.png)
