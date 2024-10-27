@@ -119,3 +119,19 @@ I will document this process, take additional screenshots, and capture the steps
 ![alt text](resources/screenshot/localtesting_browserhostin_anotherpage.png) ![alt text](resources/screenshot/localtesting_browserhostin_home.png) ![alt text](resources/screenshot/localtesting_browserhostin_secondpage.png)
 
 http://hashrouter-browserrouter-solution.s3-website-ap-southeast-2.amazonaws.com/another-pagedasfda
+
+## Cloudfront
+
+I was requested to deploy CloudFront to the above to see if my solution is working. 
+
+
+### Original hash route
+Original hash route: https://d4ue09ciitnuf.cloudfront.net
+I deployed the original has route on cloudfront to demonstrate the problem 
+
+![alt text](resources/screenshot/cloudfront_hashroute_homepage.png) ![alt text](resources/screenshot/cloudfront_hashroute_ssecondpage.png)
+
+### Browser Router  
+Solution (without #): https://dh3bu5jd80uaa.cloudfront.net
+
+![alt text](resources/screenshot/Cloudfron_solution_homepage.png) ![alt text](resources/screenshot/Cloudfron_solution_secondpage.png)
