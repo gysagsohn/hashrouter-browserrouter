@@ -135,3 +135,44 @@ I deployed the original has route on cloudfront to demonstrate the problem
 Solution (without #): https://dh3bu5jd80uaa.cloudfront.net
 
 ![alt text](resources/screenshot/Cloudfron_solution_homepage.png) ![alt text](resources/screenshot/Cloudfron_solution_secondpage.png)
+
+## Update 1
+After further discussion, it was explained that we cannot use a static website deployment on an S3 bucket due to cybersecurity concerns. As a result, we have been instructed to explore alternative solutions:
+
+* Using '?' or Different Symbols Instead of '#'
+* Convert to Next.js with Server-Side Rendering (SSR)
+
+### CloudFront Custom Error Response
+I found an article ([AWS Hosting S3 Single Page Applications](https://zirkelc.dev/posts/aws-hosting-s3-single-page-applications)) suggesting the use of a CloudFront Custom Error Response to resolve the issue without relying on a static website deployment. 
+
+For this deployment using **BrowserRouter**, I managed to remove the # from the URL successfully. However, there is still an issue when the page is refreshed, resulting in an error. I need more time to investigate how to fully resolve the refresh problem. Please see the screenshots below:
+
+#### Removal of # in URL
+![resources/second attempt/Homeapge.png](<resources/second attempt/Homeapge.png>)
+![resources/second attempt/secondpage.png](<resources/second attempt/secondpage.png>)
+
+#### Error Message When Refreshing
+![resources/second attempt/refresh.png](<resources/second attempt/refresh.png>)
+
+### Using '?' or Different Symbols Instead of '#'
+I am still researching this option. In theory, using a different symbol allows routing without requiring static hosting or server changes. However, this is a non-conventional approach for SPA routing and may create complexity in maintaining and parsing routes, potentially interfering with query parameters and leading to conflicts. Due to these limitations, I do not believe this is a viable option.
+
+### Convert to Next.js with Server-Side Rendering (SSR)
+For this approach, I plan to convert the existing React app to Next.js to leverage server-side rendering (SSR) and static generation.
+
+**What Needs to Be Done:**
+1. **Install Next.js in the Current React Project:** 
+   - Install Next.js and its required dependencies.
+2. **Restructure Files:** 
+   - Move all components that should be accessible via routes into a `/pages` directory. Each file in `/pages` will automatically become a route in Next.js.
+3. **Update Routing:** 
+   - Replace React Router with Next.js's built-in routing. This means removing BrowserRouter and using Next.js Links for navigation.
+4. **Add Server-Side Functions (Optional):** 
+   - Use `getServerSideProps` for pages that require server-side data fetching to ensure dynamic content.
+5. **Deploy to a Server Environment:** 
+   - Deploy the Next.js app to a server or cloud provider that supports SSR, such as Render, AWS Amplify, or AWS EC2.
+
+I am working on deploying a test version to demonstrate that this approach works and have created another GitHub repository to test this idea: [Node.js Solution GitHub Repo](https://github.com/gysagsohn/nodejs-solution). 
+
+Since I am not very experienced with AWS and Next.js, this process is taking some time. I will update the repository once this option has been fully tested.
+ 
