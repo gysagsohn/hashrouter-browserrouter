@@ -147,6 +147,9 @@ I found an article ([AWS Hosting S3 Single Page Applications](https://zirkelc.de
 
 For this deployment using **BrowserRouter**, I managed to remove the # from the URL successfully. However, there is still an issue when the page is refreshed, resulting in an error. I need more time to investigate how to fully resolve the refresh problem. Please see the screenshots below:
 
+During testing, we encountered an issue when refreshing pages, as the main JavaScript file (main.js) was being fetched from an incorrect location. This issue was caused by differences between relative (./) and absolute (/) paths in the JSON package. This has now been addressed, and we're moving forward with testing.
+
+
 #### Removal of # in URL
 ![resources/second attempt/Homeapge.png](<resources/second attempt/Homeapge.png>)
 ![resources/second attempt/secondpage.png](<resources/second attempt/secondpage.png>)
@@ -159,6 +162,8 @@ I am still researching this option. In theory, using a different symbol allows r
 
 ### Convert to Next.js with Server-Side Rendering (SSR)
 For this approach, I plan to convert the existing React app to Next.js to leverage server-side rendering (SSR) and static generation.
+
+The Next.js SSR option is currently on hold for now, though I plan to revisit it personally to enhance my knowledge in SSR with Next.js.
 
 **What Needs to Be Done:**
 1. **Install Next.js in the Current React Project:** 
